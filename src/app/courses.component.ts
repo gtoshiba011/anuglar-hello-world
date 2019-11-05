@@ -16,11 +16,11 @@ import { Component } from '@angular/core';
                 </li>
             </ul>
 
-            <h4>example of interpolation and property binding</h4>
+            <h4>example of interpolation and DOM property binding</h4>
             <img src="{{ imageURL }}" />
             <img [src]="imageURL" />
 
-            <h4>example of attribute binding</h4>
+            <h4>example of HTML attribute binding</h4>
             <table>
                 <tr>
                     <td [attr.colspan]="colSpan">row 1</td>
@@ -31,7 +31,7 @@ import { Component } from '@angular/core';
             <button (click)="onSave($event)" class="btn btn-primary" [class.active]="isActive" [style.backgroundColor]="isActive ? 'blue' : 'red'">Save</button>
 
             <div>
-                <h4>event binding example</h4>
+                <h4>event binding and filtering example</h4>
                 <input (keyup)="onKeyUp($event)"/>
                 <input (keyup.enter)="onEnterKeyUp()"/>
             </div>
