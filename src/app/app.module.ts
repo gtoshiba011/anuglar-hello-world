@@ -24,7 +24,7 @@ import { FavoriteComponent } from './favorite/favorite.component';
   imports: [
     BrowserModule,
     AppRoutingModule,
-    FormsModule
+    FormsModule,
   ],
   providers: [
     CoursesService,

@@ -1,23 +1,37 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
+
+export interface FavoriteChangeEventArgs {
+  newValue: boolean
+}
 
 @Component({
   selector: 'favorite',
   templateUrl: './favorite.component.html',
-  styleUrls: ['./favorite.component.css']
+  styleUrls: ['./favorite.component.css'],
+  styles: [`
+.glyphicon {
+  color: green;
+}
+.glyphicon-star {
+  background: black;
+}
+`]
 })
-export class FavoriteComponent implements OnInit {
+export class FavoriteComponent {
 
-  isFavorate: boolean;
+  // alias input property
+  @Input('isFavorite') isSelected: boolean;
+
+  // output property
+  @Output('change') click = new EventEmitter();
+
   constructor() {
-    this.isFavorate = false;
+    this.isSelected = false;
   }
 
   onClick() {
-    this.isFavorate = !this.isFavorate;
-    console.log('star is clicked, now is ' + this.isFavorate);
-  }
-
-  ngOnInit() {
+    this.isSelected = !this.isSelected;
+    this.click.emit({ newValue: this.isSelected });
   }
 
 }
