@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { FormArray, FormControl, FormGroup } from '@angular/forms';
+import { FormArray, FormControl, FormGroup, Validators } from '@angular/forms';
 
 @Component({
     selector: 'new-course-form',
@@ -8,6 +8,11 @@ import { FormArray, FormControl, FormGroup } from '@angular/forms';
 })
 export class NewCourseFormComponent {
     form = new FormGroup({
+        name: new FormControl('', Validators.required),
+        contact: new FormGroup({
+            email: new FormControl(),
+            phone: new FormControl()
+        }),
         topics: new FormArray([])
     });
 
