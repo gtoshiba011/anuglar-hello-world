@@ -12,6 +12,7 @@ import { CoursesService } from './courses.service';
 import { AuthorsComponent } from './authors/authors.component';
 import { FavoriteComponent } from './favorite/favorite.component';
 import { SignupFormComponent } from './signup-form/signup-form.component';
+import { NewCourseFormComponent } from './new-course-form/new-course-form.component';
 
 @NgModule({
   declarations: [
@@ -22,6 +23,7 @@ import { SignupFormComponent } from './signup-form/signup-form.component';
     AuthorsComponent,
     FavoriteComponent,
     SignupFormComponent,
+    NewCourseFormComponent,
   ],
   imports: [
     BrowserModule,
